@@ -6,6 +6,7 @@
 import base64
 from Crypto.Cipher import AES
 import json
+import requests
 
 
 class WXBizDataCrypt:

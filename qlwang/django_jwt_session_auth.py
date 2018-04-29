@@ -26,6 +26,7 @@ from django.dispatch.dispatcher import Signal
 from django.utils.decorators import classproperty
 from django.utils.module_loading import import_string
 from six import text_type
+import requests
 
 user_jwt_logged_in = Signal(['request', 'user'])
 
