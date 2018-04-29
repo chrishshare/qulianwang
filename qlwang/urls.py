@@ -18,4 +18,6 @@ from qlwang import views
 
 urlpatterns = [
     url('qrycollect/$', views.qry_collect, name='qrycollect'),
+    url('login$', views.login, name='login'),
+    url('addurl', views.add_url, name='addurl'),
 ]

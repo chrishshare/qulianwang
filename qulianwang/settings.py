@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import qlwang.django_jwt_session_auth
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'qlwang.django_jwt_session_auth.JwtAuthMiddleware',
 ]
 
 ROOT_URLCONF = 'qulianwang.urls'
@@ -82,7 +84,7 @@ DATABASES = {
         'USER': 'root',
         'PORT': '3306',
         'PASSWORD': '@Zhsy08241128*',
-        'HOST': 'qlwdb',
+        'HOST': '127.0.0.1',
     }
 }
 
@@ -103,6 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
@@ -145,4 +148,9 @@ LOGGING = {
             'level': 'DEBUG',
         },
     }
+}
+
+JWT_AUTH = {
+    'PAYLOAD_TO_USER': 'qlwang.utils.payload_to_user',
+    'USER_TO_PAYLOAD': 'qlwang.utils.user_to_payload',
 }
