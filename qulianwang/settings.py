@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7vb)+!)6tzn+1#q0vr%(1!=)m@0&9#-i2bk6*kdy%f&(nu!t7k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*', ]
 
@@ -84,7 +84,7 @@ DATABASES = {
         'USER': 'root',
         'PORT': '3306',
         'PASSWORD': '@Zhsy08241128*',
-        'HOST': '127.0.0.1',
+        'HOST': 'qlwdb',
     }
 }
 
